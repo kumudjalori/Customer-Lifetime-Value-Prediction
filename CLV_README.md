@@ -63,6 +63,28 @@ The goal is not to use the most advanced modeling techniques, but to demonstrate
 10. **Feature Importance** — Interpreting standardized coefficients to identify the most influential drivers of CLV.
 11. **Business Recommendations** — Practical guidance on customer segmentation, retention, and personalized marketing.
 
+---
+
+## 📊 Model Performance
+
+The Linear Regression model was evaluated using standard regression metrics.
+
+| Metric | Value |
+|:-------------------------------|-------:|
+| Mean Absolute Error (MAE) | **770.23** |
+| Mean Squared Error (MSE) | **12,116,033.92** |
+| Root Mean Squared Error (RMSE) | **3480.81** |
+| R² Score | **0.6693** |
+
+### Key Observations
+
+- The model explains approximately **66.9%** of the variation in customers' future spending.
+- Most customers' future spending is predicted reasonably well, particularly for low- and medium-value customers.
+- Prediction errors increase for customers with exceptionally high future spending, which is expected when using a simple Linear Regression model.
+- The engineered behavioral features (Recency, Frequency, Monetary Value, Purchase Frequency, Customer Tenure, and Average Purchase Value) provide meaningful predictive power for estimating Customer Lifetime Value.
+
+---
+
 ## 📈 How CLV Is Framed as a Predictive (Not Just Descriptive) Problem
 
 Rather than simply summarizing historical spend, this project splits the transaction timeline into:
@@ -103,13 +125,13 @@ clv-prediction/
 
 The dataset itself is not stored in this repo — it's downloaded automatically at runtime via `kagglehub` (or manually, as a fallback — see "How to Run" above).
 
-## 🔑 Key Learnings / Highlights
+## 🔑 Key Learnings
 
-- Framing a real business problem (CLV) as a supervised regression task using a **time-based calibration/holdout split**.
-- Engineering simple, explainable behavioral features from raw transaction logs.
-- Understanding and correctly interpreting regression metrics (MAE, MSE, RMSE, R²) in a business context.
-- Using standardized linear regression coefficients to explain **which behaviors drive future customer value**.
-- Translating model output into segmentation and marketing strategy recommendations.
+- Built an end-to-end regression pipeline for Customer Lifetime Value prediction using real-world transaction data.
+- Engineered RFM-based behavioral features from raw transaction logs using a time-based calibration and holdout approach.
+- Applied Exploratory Data Analysis (EDA) to uncover customer purchasing patterns and spending behavior.
+- Evaluated model performance using MAE, MSE, RMSE, and R² Score, and interpreted results in a business context.
+- Demonstrated how predictive analytics can support customer segmentation, personalized marketing, and retention strategies.
 
 ## 🔮 Possible Future Improvements
 
@@ -120,7 +142,10 @@ The dataset itself is not stored in this repo — it's downloaded automatically 
 
 ## 👤 Author
 
-Add your name, LinkedIn, and GitHub links here.
+**Kumud Jalori**
+
+B.Tech, Engineering Physics  
+Indian Institute of Technology Hyderabad
 
 ## 📄 License
 
